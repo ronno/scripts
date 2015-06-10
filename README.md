@@ -1,11 +1,31 @@
 scripts
 =======
 
-Contained within this repository are a handful of scripts that I use to display information to the status bar of dwm. All of the xset* scripts scrape the currently playing music data from whatever music player that they're named after, and pipe that data through xsetroot to send it to the status bar. btest.sh is a simple one-liner that fetches the charge of my laptop's battery as a percentage, formats it, and sends it to the status bar as well. These scripts work in tandem with my ~/.xinitrc (which can be found in my dotfiles repository), which displays the date and time.
+Contained within this repository are a handful of scripts that I'm too lazy to
+go without.
+* base.sh brings in a series of programs that I use on a daily basis, including
+  programs that some of the other scripts depend on to function such as
+[UPower](http://upower.freedesktop.org/ "UPower"). Great for fresh Arch Linux
+installations.
+* btest.sh is a simple one-liner that fetches the charge of my laptop's battery
+  as a percentage and formats it.
+* cpu.sh takes some output from mpstat, and greps it to a desired format.
+* mem.sh is like cpu.sh in that it takes some output from free and does some
+  formatting.
+* playon.sh's functionality has mostly been replaced by base.sh. I like to keep
+  it here for posterity's sake, as it was the first shell script I ever wrote
+and published here. Note: I don't maintain this script anymore.
+* start_jack_server.sh does what it says on the tin: starts a [JACK audio
+  server](https://wiki.archlinux.org/index.php/JACK_Audio_Connection_Kit#Installation)
+with the given parameters. I usually just alias this in my ~/.bashrc.
+* wallpaper.sh looks in a given folder and uses feh to randomly change my
+  desktop background.
+* xsetcmus.sh scrapes the currently playing music data from
+  [cmus](https://github.com/cmus/cmus "cmus"), and formats it.
 
-When both the music data scraping and battery check scripts are both running, my status bar looks something like this:
+Example output: 
 
-<img src="https://i.imgur.com/i7VbL0a.png" />
+<img src="https://i.imgur.com/p97UaAZ.png" />
 
 License
 =======
